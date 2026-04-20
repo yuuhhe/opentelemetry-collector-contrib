@@ -261,7 +261,7 @@ func (ddr *datadogReceiver) buildInfoResponse(endpoints []endpoint) ([]byte, err
 	return json.MarshalIndent(translator.DDInfo{
 		Version:          fmt.Sprintf("datadogreceiver-%s-%s", ddr.params.BuildInfo.Command, ddr.params.BuildInfo.Version),
 		Endpoints:        endpointPaths,
-		ClientDropP0s:    false,
+		ClientDropP0s:    true,
 		SpanMetaStructs:  false,
 		LongRunningSpans: false,
 	}, "", "\t")
